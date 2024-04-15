@@ -27,7 +27,7 @@ phases:
         # - npm install
         # - npm run build
         - ls
-        - docker build -t repo1-nginx .
+        - docker build -t repo1.nginx .
   post_build:
     commands:
         - docker tag repo1.nginx:latest 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1.nginx:latest
