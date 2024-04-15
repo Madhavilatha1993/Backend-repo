@@ -30,7 +30,7 @@ phases:
         - docker build -t repo1-nginx .
   post_build:
     commands:
-        - docker tag repo1.nginx:latest 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1-nginx:latest
+        - docker tag repo1.nginx:latest 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1.nginx:latest
         - echo repose-ecs
         - docker push 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1-nginx:latest
         - aws ecs register-task-definition --family taskBackend --region us-east-1 --cli-input-json file:///$CODEBUILD_SRC_DIR/ecs/task-definition1.json
