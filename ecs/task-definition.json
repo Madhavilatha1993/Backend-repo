@@ -1,5 +1,5 @@
 {
-    "family": "taskBackend",
+    "family": "backend-task",
     "containerDefinitions": [
         {
             "name": "image",
@@ -24,7 +24,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/taskBackend",
+                    "awslogs-group": "/ecs/backend-task",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
