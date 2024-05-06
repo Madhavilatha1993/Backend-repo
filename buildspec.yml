@@ -33,6 +33,6 @@ phases:
         - docker tag repo1-nginx:latest 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1-nginx:latest
         - echo repose-ecs
         - docker push 590183911139.dkr.ecr.us-east-1.amazonaws.com/repo1-nginx:latest
-        - aws ecs register-task-definition --family taskBackend --region us-east-1 --cli-input-json file:///$CODEBUILD_SRC_DIR/ecs/task-definition1.json
-        - TASK_REVISION=$(aws ecs describe-task-definition --task-definition taskBackend --region us-east-1)
-        - aws ecs update-service --cluster Backend-cluster --service Backendservice --region us-east-1 --task-definition taskBackend
+        - aws ecs register-task-definition --family backend-task --region us-east-1 --cli-input-json file:///$CODEBUILD_SRC_DIR/ecs/task-definition1.json
+        - TASK_REVISION=$(aws ecs describe-task-definition --task-definition backend-task --region us-east-1)
+        - aws ecs update-service --cluster backend-aws --service backend-service --region us-east-1 --task-definition backend-task
